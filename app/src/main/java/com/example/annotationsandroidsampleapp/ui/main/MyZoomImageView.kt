@@ -59,15 +59,20 @@ class MyZoomImageView @JvmOverloads constructor(
         Log.d("pan", "ScaledX " + scaledPanX.toString())
         Log.d("pan", "Scale factor " + scaleX.toString())
 
-        Log.d("pan",width.toString())
+        Log.d("pan", width.toString())
 
-        myRect.set(panX , panY, myRect.left + myRectHeight * zoom, myRect.right + myRectWidth * zoom)
+        myRect.set(panX, panY, myRect.left + myRectHeight * zoom, myRect.right + myRectWidth * zoom)
 
         //canvas.drawRect(myRect, Paint(Color.BLUE))
 
         val screenWidth =
 
-        canvas.drawCircle(circleX + panX*4 , circleY + panY*4 , circleRadius * zoom, Paint(Color.BLUE))
+            canvas.drawCircle(
+                circleX + panX * 4,
+                circleY + panY * 4,
+                circleRadius * zoom,
+                Paint(Color.BLUE)
+            )
 
     }
 
