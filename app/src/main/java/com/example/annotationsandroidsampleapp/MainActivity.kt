@@ -3,6 +3,7 @@ package com.example.annotationsandroidsampleapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.annotationsandroidsampleapp.ui.main.MainFragment
+import com.example.annotationsandroidsampleapp.ui.main.SecondFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,4 +16,11 @@ class MainActivity : AppCompatActivity() {
                     .commitNow()
         }
     }
+
+    fun navigateToSecond(){
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, SecondFragment.newInstance())
+            .commitNow()
+    }
+
 }

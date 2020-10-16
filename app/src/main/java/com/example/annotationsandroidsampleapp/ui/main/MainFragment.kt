@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import com.example.annotationsandroidsampleapp.MainActivity
 import com.example.annotationsandroidsampleapp.R
 import com.otaliastudios.zoom.ZoomEngine
 import com.otaliastudios.zoom.ZoomImageView
@@ -19,8 +21,10 @@ class MainFragment : Fragment() {
 
     private lateinit var viewModel: MainViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
@@ -33,6 +37,12 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val zoom = view.findViewById<ZoomImageView>(R.id.zoomImageView)
         zoom.setImageBitmap(BitmapFactory.decodeResource(context?.resources, R.drawable.flower))
+
+
+        val button = view.findViewById<Button>(R.id.to_second_fragment)
+        button.setOnClickListener {
+            (activity as MainActivity).navigateToSecond()
+        }
     }
 
 }
